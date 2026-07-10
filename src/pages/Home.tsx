@@ -1,20 +1,26 @@
-import { useState } from 'react'
-import '../App.css'
+import Hero from '../sections/Hero';
+import Features from '../sections/Features';
+import AppShowcase from '../sections/AppShowcase';
+import Transparency from '../sections/Transparency';
+import Testimonials from '../sections/Testimonials';
+import CTA from '../sections/CTA';
+import Footer from '../sections/Footer';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
-export default function Home() {
-  const [count, setCount] = useState(0)
+function Home() {
+  useScrollReveal();
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
-  )
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <Hero />
+      <Features />
+      <AppShowcase />
+      <Transparency />
+      <Testimonials />
+      <CTA />
+      <Footer />
+    </div>
+  );
 }
+
+export default Home;

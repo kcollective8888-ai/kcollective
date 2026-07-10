@@ -4,7 +4,16 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+      },
       colors: {
+        kc: {
+          navy: '#0A192F',
+          yellow: '#FFC233',
+          'yellow-dark': '#FFB300',
+          'gray-bg': '#F8F9FA',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -58,6 +67,8 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        card: "4px 4px 0px 0px rgba(0,0,0,1)",
+        "card-hover": "6px 6px 0px 0px rgba(0,0,0,1)",
       },
       keyframes: {
         "accordion-down": {
@@ -72,11 +83,21 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },

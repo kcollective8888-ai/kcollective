@@ -1,10 +1,17 @@
-import { Routes, Route } from 'react-router'
-import Home from './pages/Home'
+import { Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
+import Home from './pages/Home';
+import AppDashboard from './pages/AppDashboard';
 
-export default function App() {
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
-  )
+    <LanguageProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<AppDashboard />} />
+      </Routes>
+    </LanguageProvider>
+  );
 }
+
+export default App;
